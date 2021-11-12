@@ -63,6 +63,21 @@ public class UserDAO {
 		}
 		return -2; // 데이터베이스 오류
 	}
+	
+	public int join(User User) {
+		String SQL = "INSERT INTO USER VALUES (?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, User.getUserID());
+			pstmt.setString(2, User.getUserPassword());
+			pstmt.setString(3, User.getUserName());
+			pstmt.setString(4, User.getUserGender());
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }
 
 /*package user;
