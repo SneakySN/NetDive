@@ -13,25 +13,23 @@
   <a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
    <a class="navbar-brand text-secondary" href="main.jsp">메뉴</a>
    <a class="navbar-brand text-secondary" href="bbs.jsp">게시판</a>
-   
    <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-    접 속 링 크
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="my_login.jsp">로 그 인</a>
-    <a class="dropdown-item" href="my_join.jsp">회 원 가 입</a>
-  </div>
-</div>
-</nav>
-
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        접 속 하 기
+      </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <a class="dropdown-item" href="join.jsp">회 원 가 입</a>
+     <a class="dropdown-item" href="login.jsp">로 그 인</a>
+    </div>
+   </div>
+ </nav>
  
  <div class="container">
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
    <div class="jumbotron" style="padding-top: 50px;margin-top: 50px;">
-    <form method="post" action="loginAction.jsp">
-     <h3 style="text-align: center;">로 그 인 화 면</h3>
+    <form method="post" action="joinAction.jsp">
+     <h3 style="text-align: center;">회 원 가 입 화 면</h3>
      <br>
      <div class="form-row">
       <input type="text" class="form-control" id="userID" name="userID" placeholder="아 이 디" maxlength="20">
@@ -41,13 +39,22 @@
       <input type="password" class="form-control" id="userPassword" name="userPassword"  placeholder="비 밀 번 호" maxlength="20">
      </div>
      <br>
-     <input type="submit" class="btn btn-info form-control" value="로 그 인">
+     <div class="form-group" style = "text-align: center;">
+  		<div class = "btn-group" data-toggle="buttons">
+  			<label class = "btn btn-primary active">
+  				<input type = "radio" name ="userGender" autocomplete = "off" value="남자" checked>남자
+  			</label>
+  			<label class = "btn btn-primary">
+  				<input type = "radio" name ="userGender" autocomplete = "off" value="남자">여자
+  			</label>
+  		</div>
+  	 </div>
+     <input type="text" class="form-control" id="userPassword" name="userName"  placeholder="이 름" maxlength="20">
+     </div>
+     <input type="submit" class="btn btn-info form-control" value="회 원 가 입">
     </form>
    </div>
   </div>
  </div>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
- 
 </body>
 </html>
