@@ -1,0 +1,9 @@
+.container{
+	margin:20px auto; /*div와 div 사이의 간격*/
+	padding: 10px auto;
+	border: 4px solid black; /*박스의 굵기*/
+}
+.container-fluid{
+	padding:20px;
+	border: 10px solid orange
+}
