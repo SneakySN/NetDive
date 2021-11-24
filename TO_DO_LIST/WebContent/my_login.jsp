@@ -10,10 +10,9 @@
 </head>
 <body>
 	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
-   <a class="navbar-brand text-secondary" href="main.jsp">메뉴</a>
-   <a class="navbar-brand text-secondary" href="bbs.jsp">게시판</a>
-   
+  <a class="navbar-brand" href="content_page.jsp">JSP 게시판 웹 사이트</a>
+   <a class="navbar-brand text-secondary" href="content_page.jsp">메뉴</a>
+   <a class="navbar-brand text-secondary" href="content_page.jsp">게시판</a>
    <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
     접 속 링 크
@@ -24,8 +23,6 @@
   </div>
 </div>
 </nav>
-
- 
  <div class="container">
   <div class="col-lg-4"></div>
   <div class="col-lg-4">

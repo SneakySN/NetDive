@@ -16,6 +16,20 @@
 </head>
 <body>
  <%
+ 
+	String userID = null;
+	if(session.getAttribute("userID")!=null){
+		userID = (String) session.getAttribute("userID");
+
+	}
+	if(userID!=null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('미리 로그인이 되어있습니다.')");
+		script.println("location.href = 'content_page.jsp'");
+		script.println("</script>");
+
+	}
     if (user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserGender() == null){
 
          PrintWriter script = response.getWriter();
@@ -36,9 +50,10 @@
         } //가입성공
 
     else {
+		session.setAttribute("userID",user.getUserID());
         PrintWriter script = response.getWriter();
         script.println("<script>");
-        script.println("location.href = 'main.jsp'");
+        script.println("location.href = 'content_page.jsp'");
         script.println("</script>");
         }
 
