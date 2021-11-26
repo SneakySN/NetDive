@@ -10,13 +10,15 @@
 </head>
 <body>
 	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="content_page.jsp">JSP 게시판 웹 사이트</a>
-   <a class="navbar-brand text-secondary" href="content_page.jsp">메뉴</a>
-   <a class="navbar-brand text-secondary" href="content_page.jsp">게시판</a>
+  <a class="navbar-brand" href="content_page2.jsp">JSP 게시판 웹 사이트</a>
+   <a class="navbar-brand text-secondary" href="content_view.jsp">메뉴</a>
+   <a class="navbar-brand text-secondary" href="content_view.jsp">게시판</a>
    <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
     접 속 링 크
   </button>
+  
+  <!--  DROP DOWN MENU -->
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="my_login.jsp">로 그 인</a>
     <a class="dropdown-item" href="my_join.jsp">회 원 가 입</a>
@@ -27,6 +29,7 @@
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
    <div class="jumbotron" style="padding-top: 50px;margin-top: 50px;">
+   <!--  로그인을 누르면 loginAction 함수로 이동함 -->
     <form method="post" action="loginAction.jsp">
      <h3 style="text-align: center;">로 그 인 화 면</h3>
      <br>

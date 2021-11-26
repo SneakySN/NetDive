@@ -26,7 +26,7 @@
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('미리 로그인이 되어있습니다.')");
-		script.println("location.href = 'content_page.jsp'");
+		script.println("location.href = 'content_view.jsp'");
 		script.println("</script>");
 
 	}
@@ -53,7 +53,7 @@
 		session.setAttribute("userID",user.getUserID());
         PrintWriter script = response.getWriter();
         script.println("<script>");
-        script.println("location.href = 'content_page.jsp'");
+        script.println("location.href = 'content_view.jsp'");
         script.println("</script>");
         }
 

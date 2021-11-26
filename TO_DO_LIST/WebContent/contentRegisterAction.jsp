@@ -107,7 +107,7 @@
 	} else {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = 'content_page.jsp'");
+		script.println("location.href = 'content_view.jsp'");
 		script.println("</script>");
 		script.close();
 		System.out.println(result);
