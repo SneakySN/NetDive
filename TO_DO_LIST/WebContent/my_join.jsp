@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <title>To do list - 회원가입</title>
 </head>
-<body style="background-image: url('WebContent/img/bg.jpg');">
+<body style="background-image: url('img/bg.jpg');">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="justify-content: center;">
   <a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
    <a class="navbar-brand text-secondary" href="main.jsp">메뉴</a>
