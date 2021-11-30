@@ -89,24 +89,24 @@
 			<!-- 검색 란 -->
 			<div class = "form-group">
 				<form action="./content_view.jsp" method="get" class="form-inline my-1 my-lg-0">
-					<select name = "contentDivide" class = "form-control ">
+					<select name = "tagDivide" class = "form-control ">
 		 				<option value="전체">전체</option>
 		 		
 		 				<!--  현재는 학분 파트와 취미파트 두개만 설정 -->
-		 				<option value="전공"><% if(tagDivide.equals("전공"))out.println("selected"); %>학습</option>
-		 				<option value="취미"><% if(tagDivide.equals("취미"))out.println("selected"); %>취미</option>
+		 				<option value="학습">학습</option>
+		 				<option value="취미">취미</option>
 		 			</select>
 		 			<select name = "searchType" class = "form-control mx-1,mt-2">
 		 		
 		 			<!--  기본 정렬타입 = 최신순 -->
-		 			<option value="전체">최신순</option>
+		 			<option value="최신순">최신순</option>
 		 			</select>
 		 		
 		 			<!--  검색창 제작 -->
 					<input type="text" name="search" class="form-control mr-sm-2" type="search" placeholder="내용을 입력하세요." aria-label="Search"/>
-				
 					<!--  검색 버튼 제작 -->
 					<button class="btn btn-outline-success" type="submit">검색</button>
+					
 					<button type = "button" class = "btn btn-primary " data-toggle = "modal" data-target = "#registerc">
 	 				등록
 	 				</button>
