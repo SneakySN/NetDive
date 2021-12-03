@@ -20,7 +20,7 @@ public class contentDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/NUSER?characterEncoding=UTF-8&serverTimezone=UTC";			
 			String dbID = "root";
-			String dbPassword = "root";
+			String dbPassword = "rootroot";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// MySQL에 접속할 수 있도록 매개체 역할을 해주는 하나의 라이브러리, JDBC 드라이버 로드
 
@@ -167,50 +167,16 @@ public class contentDAO {
 		ArrayList<contentDTO> contentList = null;
 		PreparedStatement pstmt = null;
 		String SQL = "";
-		contentDTO c_title = new contentDTO();
-		c_title.getContentTitle();
-		
 		try {
 			
-			// 최신순 밖에 없기는 하지만 최신순을 선택하고 공간을 입력할 때
-			if (searchType.equals("최신순")&&search.equals("")) // 결과가 존재한다면
+			if (searchType.equals("최신순")) // 결과가 존재한다면
 			{
-				//contentName, contentTextbox, contentTitle 중에 해당 내용이 포함되는 경우 검색되도록 허용
-				// 제목, 내용, 검색태그에 해당
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName, contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
+				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName, contentName, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
 
-			}
-			// 최신순 밖에 없기는 하지만 최신순을 선택하고 태그가 취미인 상태에서 공란을 입력학 때
-			if(searchType.equals("최신순")&&tagDivide.equals("취미")&&search.equals("")) {
+			}else if(searchType.equals("추천순")) {
 				
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName, contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
-
-			} 
-			// 최신순 밖에 없기는 하지만 최신순을 선택하고 태그가 학습인 상태에서 공간을 입력할때
-			if(searchType.equals("최신순")&&tagDivide.equals("학습")&&search.equals("")) {
 				
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName, contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
-
 			}
-
-			// 태그로 학습을 선택하고 검색창에 입력 할 때
-			if(tagDivide.equals("학습")&&!search.equals("")) {
-					
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName,contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
-
-			}
-			// 태그로 취미를 선택하고 검색창에 입력 할 때
-			if(tagDivide.equals("취미")&&!search.equals("")) {
-				
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName,contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
-
-			}
-			// 태그로 아무것도 선택하지 않고(전체) 검색창에 입력 할 때
-			if(!search.equals("")) {
-				
-				SQL = "SELECT * FROM EVALUATION WHERE tagDivide LIKE ? AND CONCAT(contentName,contentTextbox, contentTitle) LIKE ? ORDER BY evaluationID DESC LIMIT " + pageNumber * 3 + ", " + pageNumber * 3 + 4;
-
-			}	
 			// like 뒤에 ? 에 해당하는 것으로 %를 사용하면 그 문자열을 포함하는지 물어보는 것.
 			
 			pstmt = conn.prepareStatement(SQL);
