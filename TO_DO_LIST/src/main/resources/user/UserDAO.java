@@ -22,7 +22,7 @@ public class UserDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/NUSER?characterEncoding=UTF-8&serverTimezone=UTC";			// localhost:3306 => 내컴퓨터에 설치된 MySQL, port 3306의 BBS라는 DB에 접속
 			String dbID = "root";
-			String dbPassword = "rootroot";
+			String dbPassword = "root";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// MySQL에 접속할 수 있도록 매개체 역할을 해주는 하나의 라이브러리, JDBC 드라이버 로드
 
