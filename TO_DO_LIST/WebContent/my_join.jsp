@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="user.*, content.*, participateTable.*, myPageManagement.*" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +36,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="mainpage.jsp">메뉴</a></li>
-					<li class="nav-item"><a class="nav-link" href=“bbs.jsp">게시판</a></li>
+					<li class="nav-item"><a class="nav-link" href="content_view.jsp">게시판</a></li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
 							id="dropdownMenuButton" data-toggle="dropdown"
@@ -48,9 +50,6 @@
 			</div>
 		</div>
 	</nav>
-
-
-
 	<!--Join-->
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 my-5">
@@ -60,7 +59,7 @@
 						src="https://images.unsplash.com/photo-1595315342828-f5c4749649ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
 				</div>
 				<div class="col-md-6">
-					<form method="post" action=“joginAction.jsp">
+					<form method="post" action="joinAction.jsp">
 						<h1 class="display-5 fw-bolder">
 							 회원가입 화면
 							<h1>
@@ -94,7 +93,7 @@
 									<input type="submit" class = "form-control"
 										value="회원가입">
 								
-								</div>
+							</div>
 					</form>
 				</div>
 			</div>

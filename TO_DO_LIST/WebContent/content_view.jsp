@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter, java.util.ArrayList, java.net.URLEncoder" %>
-<%@ page import="user.*, content.*" %>
+<%@ page import="user.*, content.*, participateTable.*" %>
 <%@ page import="java.net.URLEncoder" %>
 <%@ include file="write_funcUI.jsp" %>
 
@@ -10,21 +10,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>목표 공유 챌린지</title>
+<title>TO DO LIST - 메인 화면, 게시판</title>
 <!-- bootstrap CSS 추가 -->
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <!-- custom CSS 추가 -->
 <link rel="stylesheet" href="album.css">
 </head>
-<body>
+<body style="background-image: url('img/bg.jpg');">
 <%
-		
 		request.setCharacterEncoding("UTF-8");
 		String tagDivide = "전체"; // 기본선택사항 = 전체
 		String searchType = "최신순";
 		String search = "";
 		int pageNumber = 0;
-
 		if(request.getParameter("tagDivide")!=null){
 			tagDivide = request.getParameter("tagDivide");
 		}
@@ -56,11 +54,9 @@
 			script.close();
 			return;
 		}
-
 %>
-	
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="content_view.jsp">목표 공유 챌린지</a>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="content_view.jsp">TO DO LIST</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -74,15 +70,8 @@
 							회원관리
 						</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown">
-<%
-							if(userID == null) {
-%>							<a class="dropdown-item" href="my_login.jsp">로그인</a>
-							<a class="dropdown-item" href="my_join.jsp">회원가입</a>
-<% 							} else 
-							{
-%>							<a class="dropdown-item" href="logoutAction.jsp">로그아웃</a>
-<%							}
-%>							
+						    <a class="dropdown-item" href="my_page.jsp">마이페이지</a>
+							<a class="dropdown-item" href="logoutAction.jsp">로그아웃</a>
 						</div>
 					</li>
 				</ul>
@@ -130,14 +119,22 @@
 								if(i==3) break;
 								contentDTO contentdata = contentList.get(i);
 								System.out.println(i);
-%>					<div class="card">
+%>						<div class="card" style="prefers-color-scheme: dark">
 						<div class="card-body"style = "height:280px">
       					<h5 class="card-title"><%=contentdata.getContentName()%>&nbsp;</h5>
         				<p class="card-text"style = "height:180px"><%=contentdata.getContentTextbox()%>&nbsp;</p>
       					</div>
       					<!--  # 부분에 참여하기 버튼에 따른 기능 추가. -->
       					<div class = "card-bottom">
-      					<a href="#" class="btn btn-primary">참여하기</a>
+      					<form action="participateAction.jsp" method="get">
+      					<%
+      					int evaluationID = contentdata.getEvaluationID();
+      					System.out.print("content_view evaluationID: ");
+      					System.out.println(evaluationID);
+      					%>
+      					<input type="submit" class="btn btn-info form-control" value="참여하기">
+      					<input type="hidden" name="evaluationID" value="<%=evaluationID%>">
+      					</form>
       					</div>
       				</div>
 <%
@@ -187,7 +184,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
 	
 

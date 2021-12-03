@@ -34,8 +34,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<li class="nav-item"><a class="nav-link"
-						aria-current="page" href="mainpage.jsp">메뉴</a></li>
-					<li class="nav-item"><a class="nav-link" href=“bbs.jsp">게시판</a></li>
+						aria-current="page" href="my_page.jsp">메뉴</a></li>
+					<li class="nav-item"><a class="nav-link" href="content_view.jsp">게시판</a></li>
 					<li class="nav-item dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
 							id="dropdownMenuButton" data-toggle="dropdown"
@@ -49,7 +49,6 @@
 			</div>
 		</div>
 	</nav>
-
 <!--Log in-->
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 my-5">
