@@ -5,7 +5,7 @@ my_page.jsp 생성
 userID가 Null일 때 작동하던 부분(content_view.jsp에서 if(userID == null)) 제거 - Null일 때 이미 위에서 걸러내서 로그인하게 함
 회원관리 dropdown메뉴에서 마이페이지를 누르면 my_page.jsp로 가게 변경(마찬가지로 navbar의 게시판을 선택 시 메인 화면으로 돌아가기 가능)
 참여하기 버튼 기능을 구현하는데 있어 참여하기 버튼의 타입을 변경
-테이블 "participation" 구현 - 각각 column evaluationID - int, userID - varchar(20)으로 구성
+테이블 "participate" 구현 - 각각 column evaluationID - int, userID - varchar(20)으로 구성
 participateAction.jsp 구현, ParticipationDAO.jsp, ParticipationDTO.jsp를 패키지 participateTable에 구현
 content_view.jsp 글 로딩하는 부분에서 참여하기 버튼의 기능을 추가
 myPageManagement(myPageAction.java, myPageDTO.java) - 마이페이지에 현재 제작된 기능을 표로 띄우는 기능을 완성.
